@@ -17,7 +17,7 @@ export default {
   name: 'App',
   data () {
     return {
-      showNav: false
+      showNav: true
     }
   },
   components: {
