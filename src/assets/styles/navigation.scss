@@ -1,0 +1,126 @@
+.panel {
+  position: relative;
+  margin: 50px auto;
+  width: 1100px;
+  height: 840px;
+  overflow: hidden;
+  background-color: #fff;
+  .canvas-wrap {
+    position: absolute;
+    left: 300px;
+    top: 200px;
+    width: 430px;
+    height: 430px;
+    border-radius: 50%;
+    background-color: #7ED321;
+    z-index: 98;
+  }
+  .hint {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    color: #999;
+    user-select: none;
+    span {
+      display: block;
+    }
+  }
+}
+.machine-info {
+  position: absolute;
+  left: 427px;
+  top: 327px;
+  width: 176px;
+  height: 176px;
+  border-radius: 50%;
+  overflow: hidden;
+  user-select: none;
+  z-index: 99;
+  .machine-image {
+    margin: 28px auto 5px;
+    width: 120px;
+    height: 90px;
+  }
+  .info {
+    div {
+      font-size: 12px;
+      height: 18px;
+      line-height: 18px;
+      text-align: center;
+    }
+  }
+}
+/* 二级导航球体 */
+.ball {
+  position: absolute;
+  left: 455px;
+  top: 355px;
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  opacity: 0;
+  background-color: #fabf40;
+  transform-origin: 280px 280px;
+  outline: none;
+  user-select: none;
+  z-index: 0;
+  cursor: pointer;
+  .outer {
+    width: 100px;
+    height: 100px;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: #F7DCA6;
+    .inner {
+      width: 84px;
+      height: 84px;
+      padding-top: 20px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+  }
+}
+.ball-show-single {
+  .ball {
+    opacity: 0;
+    left: 238px;
+    top: 134px;
+  }
+  .ball-show {
+    opacity: 1;
+  }
+}
+.ball-show-all {
+  .ball {
+    opacity: 1;
+    left: 238px;
+    top: 134px;
+    transition: left .5s linear, top .5s linear, opacity .5s linear, transform .5s linear;
+  }
+}
+.inner {
+  transition: transform .2s linear;
+}
+.ball-active {
+  animation: ballActive 2s reverse infinite;
+}
+
+@keyframes ballActive {
+  0% {
+    box-shadow: 0 0 0 #fff;
+  }
+  50% {
+    box-shadow: 0 0 20px 5px #fabf40;
+  }
+  100% {
+    box-shadow: 0 0 0 #fff;
+  }
+}
+.preload-imgs {
+  display: none;
+}
